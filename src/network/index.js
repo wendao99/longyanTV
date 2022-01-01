@@ -266,3 +266,9 @@ export function recordRecentVideo(limit) {
     }
   })
 }
+
+export function playListHot() {
+  return request({
+    url: '/playlist/hot'
+  })
+}

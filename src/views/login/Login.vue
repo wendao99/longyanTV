@@ -35,7 +35,7 @@
 </template>
 
 <script>
-import { cellphone} from "@/network/index.js";
+import { cellphone, playListHot} from "@/network/index.js";
 import md5 from "js-md5";
 import { setCookies,isAccountLoggedIn } from "@/utils/auth.js";
 import { mapMutations } from 'vuex'
@@ -53,11 +53,16 @@ export default {
   methods: {
     ...mapMutations(["updateData"]),
     loginBtn() {
-      this.loginWithPhone(
-        this.phone,
-        "fakePassword",
-        md5(this.password).toString()
-      );
+      // this.loginWithPhone(
+      //   this.phone,
+      //   "fakePassword",
+      //   md5(this.password).toString()
+      // );
+      playListHot().then(res => {
+        console.log(res);
+      }).catch(error => {
+        console.log(error);
+      })
     },
     loginWithPhone(phone, password, md5_password) {
       cellphone(phone, password, md5_password).then(
