@@ -2,7 +2,7 @@
 
 module.exports = {
   devServer:{
-    host:'localhost',
+    host:'longyan-tv.vercel.app',
     port:8080,
     proxy:{
       '/api':{
