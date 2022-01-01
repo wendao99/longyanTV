@@ -48,7 +48,6 @@ export default {
     };
   },
   mounted() {
-    console.log(localStorage);
     console.log(isAccountLoggedIn());
   },
   methods: {
@@ -77,7 +76,9 @@ export default {
           console.log(error);
           Promise.reject(error);
         }
-      );
+      ).catch(error => {
+        console.log(error);
+      } );
     },
   },
 };
