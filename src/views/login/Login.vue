@@ -62,6 +62,7 @@ export default {
     loginWithPhone(phone, password, md5_password) {
       cellphone(phone, password, md5_password).then(
         (res) => {
+          console.log(res);
           if (res.code === 200) {
             setCookies(res.cookie);
             this.updateData({ key: "loginMode", value: "account" });
