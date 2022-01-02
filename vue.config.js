@@ -2,14 +2,14 @@
 
 module.exports = {
   devServer:{
-    host: 'http://localhost:8080/',
-    disableHostCheck: true,
+    host: 'localhost',
+    port: 8080,
     proxy:{
-      '^/api':{
+      '/api':{
         target:'http://120.25.75.58:8889',
         changeOrigin:true,
         pathRewrite:{
-          '^/api': ''
+          '/api': ''
         }
       }
     }
