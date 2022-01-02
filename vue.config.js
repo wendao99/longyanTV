@@ -4,7 +4,7 @@ module.exports = {
   devServer:{
     host: 'longyan-tv.vercel.app',
     port: 443,
-    disableHostCheck,
+    disableHostCheck: true,
     proxy:{
       '^/api':{
         target:'http://120.25.75.58:8889',
